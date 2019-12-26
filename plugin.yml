@@ -1,0 +1,6 @@
+name: BackSysteme
+author: AlexJCJ
+version: 1.0.0
+main: AlexJCJ\Back\Main
+description: "Plugin Back by AlexJCJ pour YouTube (tuto)"
+api: ["4.0.0"]
