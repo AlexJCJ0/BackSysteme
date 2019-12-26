@@ -7,7 +7,6 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\PluginCommand;
 use pocketmine\level\Position;
 use pocketmine\Player;
-use pocketmine\plugin\Plugin;
 use pocketmine\utils\Config;
 
 class Back extends PluginCommand {
@@ -26,9 +25,12 @@ class Back extends PluginCommand {
 
         if ($player instanceof Player){
             if ($config->exists($player->getName())){
-                $pos = explode(" ", $config->get($player->getName()));
+                $pos = explode("_", $config->get($player->getName()));
+                $x = (int)$pos[0];
+                $y = (int)$pos[1];
+                $z = (int)$pos[2];
                 $level = $this->plugin->getServer()->getLevelByName($pos[3]);
-                $player->teleport(new Position($pos[0], $pos[1], $pos[2], $level));
+                $player->teleport(new Position($x, $y, $z, $level));
                 $player->sendMessage("§aVous vous êtes bien teleporté a votre dernier point de mort");
             } else {
                 $player->sendMessage("§cVous n'êtes pas mort dans cette session");
