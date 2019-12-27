@@ -20,7 +20,7 @@ class PlayerDeathListener implements Listener {
         $player = $ev->getPlayer();
         $config = new Config($this->plugin->getDataFolder() . "Backs.yml", Config::YAML);
 
-        $config->set($player->getName(), "{$player->getX()} {$player->getY()} {$player->getZ()} {$player->getLevel()->getName()}");
+        $config->set($player->getName(), "{$player->getX()}_{$player->getY()}_{$player->getZ()}_{$player->getLevel()->getName()}");
         $config->save();
     }
 }
