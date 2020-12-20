@@ -1,2 +1,2 @@
-# BackSysteme
-French Plugin for Back teleport
+# BackSystem
+PocketMine-MP plugin for teleport to death location.
